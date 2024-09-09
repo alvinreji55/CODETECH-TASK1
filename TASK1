@@ -1,0 +1,62 @@
+class Student:
+    def __init__(self, name):
+        self.name = name
+        self.grades = {}  # Dictionary to store subject: grade
+
+    def add_grade(self, subject, grade):
+        self.grades[subject] = grade
+        print(f"Grade for {subject} added: {grade}")
+
+    def calculate_average(self):
+        if not self.grades:
+            return 0
+        total = sum(self.grades.values())
+        average = total / len(self.grades)
+        return average
+
+    def determine_letter_grade(self, average):
+        if average >= 90:
+            return 'A'
+        elif average >= 80:
+            return 'B'
+        elif average >= 70:
+            return 'C'
+        elif average >= 60:
+            return 'D'
+        else:
+            return 'F'
+
+    def calculate_gpa(self, average):
+        if average >= 90:
+            return 4.0
+        elif average >= 80:
+            return 3.0
+        elif average >= 70:
+            return 2.0
+        elif average >= 60:
+            return 1.0
+        else:
+            return 0.0
+
+    def display_report(self):
+        print(f"\nReport for {self.name}:")
+        for subject, grade in self.grades.items():
+            print(f"{subject}: {grade}")
+        average = self.calculate_average()
+        letter_grade = self.determine_letter_grade(average)
+        gpa = self.calculate_gpa(average)
+        print(f"\nOverall Average: {average:.2f}")
+        print(f"Letter Grade: {letter_grade}")
+        print(f"GPA: {gpa:.2f}")
+
+
+# Example usage
+student = Student("Alice")
+
+# Add grades for different subjects
+student.add_grade("Math", 85)
+student.add_grade("Science", 92)
+student.add_grade("English", 78)
+
+# Display report with average, letter grade, and GPA
+student.display_report()
