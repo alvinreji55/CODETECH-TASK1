@@ -24,8 +24,8 @@ The goal of this project is to develop a Python-based Student Grade Tracker that
 analysis of student grades. The application will provide functionalities to add, update, and track student grades, 
 while generating statistical summaries and insights to monitor academic performance.
 
+### Key Activities:
 
-# Key Activities:
 # 1. Data Input: Develop a system for entering and storing student names, subjects, and corresponding grades.
 # 2. Grade Calculation: Implement functions to calculate overall performance, including averages, highest and lowest grades.
 # 3. Data Update: Allow users to update student grades and information as needed.
